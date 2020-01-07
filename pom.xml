@@ -142,58 +142,20 @@
 		</execution> </executions> <dependencies> <dependency> <groupId>org.springframework.restdocs</groupId> 
 		<artifactId>spring-restdocs-asciidoctor</artifactId> <version>${spring-restdocs.version}</version> 
 		</dependency> </dependencies> </plugin> <plugin> <groupId>org.springframework.boot</groupId> 
-		<artifactId>spring-boot-maven-plugin</artifactId> </plugin> </plugins> </build> -->
-
-	<build>
-		<defaultGoal>spring-boot:run</defaultGoal>
-		<testResources>
-			<testResource>
-				<directory>src/test/resources/</directory>
-			</testResource>
-		</testResources>
-		<plugins>
-			<plugin>
-				<groupId>org.openapitools</groupId>
-				<artifactId>openapi-generator-maven-plugin</artifactId>
-				<version>${openapi.version}</version>
-				<executions>
-					<execution>
-						<goals>
-							<goal>generate</goal>
-						</goals>
-						<configuration>
-							<language>spring</language>
-							<generateSupportingFiles>false</generateSupportingFiles>
-							<inputSpec>src/main/resources/MavenAws.yaml</inputSpec>
-							<generateApiTests>true</generateApiTests>
-							<generateModelTests>true</generateModelTests>
-							<generateApis>true</generateApis>
-							<generateModels>true</generateModels>
-							<generateModelDocumentation>true</generateModelDocumentation>
-							<generateApiDocumentation>true</generateApiDocumentation>
-							<generateSupportingFiles>true</generateSupportingFiles>
-							<output>target/generated-sources/</output>
-							<configOptions>
-								<modelPackage>com.awstest.services.openapi.model</modelPackage>
-								<apiPackage>com.awstest.services.openapi.api</apiPackage>
-								<interfaceOnly>true</interfaceOnly>
-								<library>spring-boot</library>
-								<useBeanValidation>true</useBeanValidation>
-								<dateLibrary>java8</dateLibrary>
-								<java8>true</java8>
-							</configOptions>
-						</configuration>
-					</execution>
-				</executions>
-				<dependencies>
-					<dependency>
-						<groupId>org.openapitools</groupId>
-						<artifactId>openapi-generator-maven-plugin</artifactId>
-						<version>${openapi.version}</version>
-					</dependency>
-				</dependencies>
-			</plugin>
-		</plugins>
-	</build>
+		<artifactId>spring-boot-maven-plugin</artifactId> </plugin> </plugins> </build> 
+		<build> <plugins> <plugin> <groupId>org.openapitools</groupId> <artifactId>openapi-generator-maven-plugin</artifactId> 
+		<version>${openapi.version}</version> <executions> <execution> <goals> <goal>generate</goal> 
+		</goals> <configuration> <language>spring</language> <generateSupportingFiles>false</generateSupportingFiles> 
+		<inputSpec>src/main/resources/MavenAws.yaml</inputSpec> <generateApiTests>false</generateApiTests> 
+		<generateModelTests>false</generateModelTests> <generateApis>true</generateApis> 
+		<generateModels>true</generateModels> <generateModelDocumentation>true</generateModelDocumentation> 
+		<generateApiDocumentation>true</generateApiDocumentation> <generateSupportingFiles>false</generateSupportingFiles> 
+		<output>target/generated-sources/annotations</output> <configOptions> <modelPackage>com.awstest.services.openapi.model</modelPackage> 
+		<apiPackage>com.awstest.services.openapi.api</apiPackage> <interfaceOnly>true</interfaceOnly> 
+		<library>spring-boot</library> <useBeanValidation>true</useBeanValidation> 
+		<dateLibrary>java8</dateLibrary> <java8>true</java8> </configOptions> </configuration> 
+		</execution> </executions> <dependencies> <dependency> <groupId>org.openapitools</groupId> 
+		<artifactId>openapi-generator-maven-plugin</artifactId> <version>${openapi.version}</version> 
+		</dependency> </dependencies> </plugin> </plugins> </build> -->
 
 </project>
