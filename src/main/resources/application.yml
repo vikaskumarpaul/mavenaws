@@ -19,6 +19,7 @@ spring:
     url: jdbc:postgresql://localhost:5432/awsservicestest
     username: postgres
     password: great123
+    ddl-auto: create
   devtools:
     add-properties: false
   jpa:
@@ -28,5 +29,6 @@ spring:
           use_jdbc_metadata_defaults: false
         dialect: org.hibernate.dialect.PostgreSQLDialect
     show-sql: true
+    
   profiles:
     active: dev
